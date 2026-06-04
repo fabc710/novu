@@ -48,7 +48,7 @@
 .prod-hero__bg-photo {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/images/products/hero-bg.webp');
+  background-image: url('../assets/images/hero-productsv2.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -63,13 +63,14 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 88% 12%, rgba(199,154,62,0.26), transparent 42%),
-    radial-gradient(circle at 2% 92%, rgba(125,155,196,0.22), transparent 46%),
+    radial-gradient(circle at 88% 12%, rgba(199,154,62,0.22), transparent 44%),
+    radial-gradient(circle at 2% 92%, rgba(125,155,196,0.18), transparent 48%),
     linear-gradient(
       100deg,
-      rgba(10, 21, 40, 0.92) 0%,
-      rgba(20,41,77, 0.80) 45%,
-      rgba(20,41,77, 0.52) 100%
+      rgba(8, 18, 36, 0.94) 0%,
+      rgba(12, 26, 51, 0.82) 38%,
+      rgba(12, 26, 51, 0.55) 70%,
+      rgba(12, 26, 51, 0.38) 100%
     );
   z-index: 2;
 }
@@ -130,6 +131,35 @@
   line-height: var(--lh-loose);
   max-width: 520px;
 }
+
+/* Hero call-to-action buttons */
+.prod-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+
+/* Hero trust points */
+.prod-hero__points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(255,255,255,0.14);
+  max-width: 520px;
+}
+.prod-hero__points li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-secondary);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: rgba(255,255,255,0.85);
+}
+.prod-hero__points i { color: var(--color-gold-light); font-size: var(--fs-md); }
 
 /* ── Imagen lateral derecha ── */
 .prod-hero__image {

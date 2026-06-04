@@ -2,41 +2,28 @@
  * ================================================================
  * NOVU INSURANCE AGENCY — Contact Page JavaScript
  * File: js/contact.js
- * Version: 2.0 — Bug fixes applied
+ * Version: 3.0 — FormSubmit compatible
  *
- * FIXES IN THIS VERSION:
- * 1. initFloatingButtons: Un solo requestAnimationFrame (rAF) no
- *    garantiza que el browser haya pintado el estado inicial antes
- *    de ejecutar el callback — la transición saltaba sin animar.
- *    Corregido con doble rAF (patrón estándar) para asegurar que
- *    el estado opacity:0 / translateX(80px) se pinte primero.
- * 2. initFloatingButtons + initInfoPanelEntrance: Eliminado inline
- *    opacity:0 al DOMContentLoaded (FOIC). Ahora usan clases CSS
- *    --hidden para el estado inicial, igual que los otros archivos.
- *    Requiere en CSS:
- *      .float-btn--hidden  { opacity:0; transform:translateX(80px); }
- *      .cinfo-item--hidden { opacity:0; transform:translateX(-16px); }
- *    Nota: initFloatingButtons también puede conflictuar con el
- *    @keyframes floatBtnsIn del index.css — si ya existe esa
- *    animación en el CSS, esta función no es necesaria.
- * 3. initFloatingButtons: Conflicto potencial con @keyframes
- *    floatBtnsIn definido en index.css sobre .floating-buttons.
- *    Se agrega guard para no duplicar la animación si ya corre el CSS.
- * 4. initConsentAnimation: custom.style.transition se seteaba inline
- *    en cada change event pero nunca se limpiaba, dejando la
- *    transición inline activa permanentemente y bloqueando futuros
- *    estados CSS del elemento. Ahora se limpia con setTimeout tras
- *    la animación.
+ * CHANGES IN THIS VERSION:
+ * - initContactForm: eliminado fetch() a send_mail.php y el
+ *   e.preventDefault() que bloqueaba el envío nativo del form.
+ *   Ahora el formulario envía directamente a FormSubmit vía el
+ *   atributo action del HTML. El JS solo valida y agrega el
+ *   campo oculto sms_consent antes de que el browser envíe.
+ * - Eliminadas funciones setLoadingState / showMessage (ya no
+ *   aplican — FormSubmit redirige a thank-you.html al enviar).
+ * - Todo lo demás (validación, phone formatter, animaciones)
+ *   se mantiene igual que la v2.0.
  *
  * TABLE OF CONTENTS
  * 1.  DOMContentLoaded Init
  * 2.  Utility Helpers
- * 3.  Form Submission (fetch → send_mail.php)
+ * 3.  Form Submission (FormSubmit — validación + sms_consent)
  * 4.  Real-time Field Validation
  * 5.  Phone Number Auto-Formatting
  * 6.  SMS Consent Checkbox Animation
  * 7.  Floating Buttons — Entrance Animation
- * 8.  Info Panel Items — Hover Entrance
+ * 8.  Info Panel Items — Staggered Entrance
  * ================================================================
  */
 
@@ -56,9 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
    2. UTILITY HELPERS
 ================================================================ */
 
-/**
- * Devuelve true si el usuario prefiere movimiento reducido.
- */
 function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
@@ -66,87 +50,48 @@ function prefersReducedMotion() {
 
 /* ================================================================
    3. FORM SUBMISSION
-   Lógica original preservada:
-   - Previene el submit por defecto
-   - Lee smsConsentCheckbox → "Yes" o "No" en FormData
-   - Fetch POST a send_mail.php
-   - Verifica "success" en la respuesta
-   - Muestra mensaje de éxito o error en #formMessage
+   FormSubmit maneja el envío nativamente via action del HTML.
+   Este bloque solo:
+     a) Bloquea el submit si la validación falla.
+     b) Inyecta sms_consent como campo hidden antes del envío.
+   NO usa fetch(). NO llama a send_mail.php.
 ================================================================ */
 function initContactForm() {
-  const form       = document.getElementById('contactForm');
-  const messageBox = document.getElementById('formMessage');
-  const submitBtn  = document.getElementById('submitBtn');
-  if (!form || !messageBox || !submitBtn) return;
+  const form = document.getElementById('contactForm');
+  if (!form) return;
 
-  const submitText    = submitBtn.querySelector('.cform__submit-text');
-  const submitLoading = submitBtn.querySelector('.cform__submit-loading');
+  form.addEventListener('submit', function (e) {
 
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+    // Si la validación falla, bloquear el envío
+    if (!validateAllFields()) {
+      e.preventDefault();
+      return;
+    }
 
-    // Validación del lado del cliente primero
-    if (!validateAllFields()) return;
-
-    const formData = new FormData(form);
-
-    // Captura del estado del checkbox SMS (mismo que el original)
+    // Capturar estado del checkbox SMS y pasarlo como campo hidden
     const smsCheckbox = document.getElementById('smsConsentCheckbox');
-    formData.set('sms_consent', smsCheckbox.checked ? 'Yes' : 'No');
+    if (smsCheckbox) {
+      let hiddenInput = document.getElementById('sms_consent_hidden');
 
-    setLoadingState(true);
-    showMessage('loading', '<i class="ri-loader-4-line cform__spinner"></i> Sending your message…');
-
-    try {
-      const response = await fetch('send_mail.php', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const result = await response.text();
-
-      if (result.trim() === 'success') {
-        showMessage(
-          'success',
-          '<i class="ri-checkbox-circle-line"></i> We\'ve received your message. Our team will get back to you as soon as possible.'
-        );
-        form.reset();
-        clearAllValidationStates();
-        messageBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } else {
-        showMessage(
-          'error',
-          '<i class="ri-close-circle-line"></i> There was a problem sending your message. Please try again later.'
-        );
+      if (!hiddenInput) {
+        hiddenInput = document.createElement('input');
+        hiddenInput.type = 'hidden';
+        hiddenInput.name = 'sms_consent';
+        hiddenInput.id   = 'sms_consent_hidden';
+        form.appendChild(hiddenInput);
       }
 
-    } catch (_) {
-      showMessage(
-        'error',
-        '<i class="ri-wifi-off-line"></i> Connection error. Please check your connection and try again.'
-      );
-    } finally {
-      setLoadingState(false);
+      hiddenInput.value = smsCheckbox.checked ? 'Yes' : 'No';
     }
+
+    // Si todo OK, el browser envía a FormSubmit normalmente.
+    // FormSubmit redirige a thank-you.html tras el envío.
   });
-
-  function setLoadingState(isLoading) {
-    submitBtn.disabled = isLoading;
-    if (submitText)    submitText.hidden    =  isLoading;
-    if (submitLoading) submitLoading.hidden = !isLoading;
-  }
-
-  function showMessage(type, html) {
-    messageBox.removeAttribute('hidden');
-    messageBox.innerHTML = `<div class="cform__message-${type}">${html}</div>`;
-  }
 }
 
 
 /* ================================================================
    4. REAL-TIME FIELD VALIDATION
-   Valida campos en blur y muestra errores inline.
-   Limpia errores mientras el usuario escribe.
 ================================================================ */
 function initFieldValidation() {
   const nameInput    = document.getElementById('name');
@@ -252,7 +197,6 @@ function clearAllValidationStates() {
 
 /* ================================================================
    5. PHONE NUMBER AUTO-FORMATTING
-   Formatea números de teléfono US como (XXX) XXX-XXXX al escribir.
 ================================================================ */
 function initPhoneFormatter() {
   const phoneInput = document.getElementById('phone');
@@ -289,7 +233,7 @@ function initPhoneFormatter() {
 
 /* ================================================================
    6. SMS CONSENT CHECKBOX ANIMATION
-   FIX 4: limpia inline transition después de la animación.
+   FIX: limpia inline transition después de la animación.
 ================================================================ */
 function initConsentAnimation() {
   const checkbox = document.getElementById('smsConsentCheckbox');
@@ -321,7 +265,7 @@ function initFloatingButtons() {
   if (!buttons.length) return;
   if (prefersReducedMotion()) return;
 
-  // Guard — si el contenedor ya tiene animación CSS activa, no duplicar
+  // Guard — no duplicar si ya hay animación CSS activa en el contenedor
   const container = document.querySelector('.floating-buttons');
   if (container) {
     const computedAnim = getComputedStyle(container).animationName;
