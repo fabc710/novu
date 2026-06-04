@@ -1,5 +1,5 @@
 /* ================================================================
-   VENTUS INSURANCE AGENCY — Services Page Stylesheet
+   NOVU INSURANCE AGENCY — Services Page Stylesheet
    File: css/services.css
    Inherits design tokens from css/index.css
 ================================================================ */
@@ -74,7 +74,7 @@
     linear-gradient(
       155deg,
       rgba(9, 19, 42, 0.70) 0%,
-      rgba(18, 33, 71, 0.55) 50%,
+      rgba(20,41,77, 0.55) 50%,
       rgba(0, 97, 158, 0.20) 100%
     );
 }
@@ -83,7 +83,7 @@
 .svc-hero__ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(197, 171, 98, 0.12);
+  border: 1px solid rgba(199,154,62, 0.12);
   pointer-events: none;
   z-index: 2;
 }
@@ -99,7 +99,7 @@
   width: 360px; height: 360px;
   top: 50%; right: 10px;
   transform: translateY(-50%);
-  border-color: rgba(197, 171, 98, 0.08);
+  border-color: rgba(199,154,62, 0.08);
   animation: ringPulse 6s ease-in-out infinite 1.5s;
 }
 
@@ -107,7 +107,7 @@
   width: 220px; height: 220px;
   top: 50%; right: 100px;
   transform: translateY(-50%);
-  border-color: rgba(197, 171, 98, 0.05);
+  border-color: rgba(199,154,62, 0.05);
   animation: ringPulse 6s ease-in-out infinite 3s;
 }
 
@@ -245,7 +245,7 @@
 /* Featured card */
 .svc-card--featured {
   border-color: var(--color-gold);
-  background: linear-gradient(160deg, #fff 0%, rgba(197, 171, 98, 0.04) 100%);
+  background: linear-gradient(160deg, #fff 0%, rgba(199,154,62, 0.04) 100%);
 }
 
 .svc-card--featured::before {
@@ -275,7 +275,7 @@
   align-items: center;
   justify-content: center;
   width: 68px; height: 68px;
-  background: linear-gradient(135deg, rgba(18, 33, 71, 0.07), rgba(59, 82, 131, 0.05));
+  background: linear-gradient(135deg, rgba(20,41,77, 0.07), rgba(59, 82, 131, 0.05));
   border-radius: var(--radius-xl);
   color: var(--color-navy-dark);
   font-size: 1.875rem;
@@ -400,7 +400,7 @@
 
 .svc-process__step:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(197, 171, 98, 0.30);
+  border-color: rgba(199,154,62, 0.30);
   transform: translateY(-4px);
 }
 
@@ -420,8 +420,8 @@
   align-items: center;
   justify-content: center;
   width: 68px; height: 68px;
-  background: rgba(197, 171, 98, 0.12);
-  border: 1px solid rgba(197, 171, 98, 0.25);
+  background: rgba(199,154,62, 0.12);
+  border: 1px solid rgba(199,154,62, 0.25);
   border-radius: var(--radius-xl);
   color: var(--color-gold-light);
   font-size: 1.75rem;
@@ -454,7 +454,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(197, 171, 98, 0.45);
+  color: rgba(199,154,62, 0.45);
   font-size: var(--fs-2xl);
   flex-shrink: 0;
   margin-top: var(--space-10);
@@ -496,7 +496,7 @@
 .specialty-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(197, 171, 98, 0.35);
+  border-color: rgba(199,154,62, 0.35);
 }
 
 .specialty-card__icon {
@@ -505,8 +505,8 @@
   justify-content: center;
   width: 52px; height: 52px;
   min-width: 52px;
-  background: linear-gradient(135deg, rgba(18, 33, 71, 0.07), rgba(197, 171, 98, 0.07));
-  border: 1px solid rgba(197, 171, 98, 0.20);
+  background: linear-gradient(135deg, rgba(20,41,77, 0.07), rgba(199,154,62, 0.07));
+  border: 1px solid rgba(199,154,62, 0.20);
   border-radius: var(--radius-lg);
   color: var(--color-gold-dark);
   font-size: var(--fs-xl);
@@ -566,7 +566,7 @@
 
 .svc-stat-item:hover {
   background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(197, 171, 98, 0.30);
+  border-color: rgba(199,154,62, 0.30);
   transform: translateY(-4px);
 }
 
@@ -575,7 +575,7 @@
   align-items: center;
   justify-content: center;
   width: 52px; height: 52px;
-  background: rgba(197, 171, 98, 0.12);
+  background: rgba(199,154,62, 0.12);
   border-radius: var(--radius-lg);
   color: var(--color-gold-light);
   font-size: var(--fs-xl);
@@ -719,7 +719,7 @@
   font-size: 8rem;
   font-family: Georgia, serif;
   font-weight: 900;
-  color: rgba(197, 171, 98, 0.08);
+  color: rgba(199,154,62, 0.08);
   line-height: 1;
   pointer-events: none;
 }
@@ -808,7 +808,7 @@
 }
 
 .testimonials__dot:hover {
-  background: rgba(197, 171, 98, 0.60);
+  background: rgba(199,154,62, 0.60);
   transform: scale(1.2);
 }
 

@@ -1,5 +1,5 @@
 /* ================================================================
-   VENTUS INSURANCE AGENCY — Contact Page Stylesheet
+   NOVU INSURANCE AGENCY — Contact Page Stylesheet
    File: css/contact.css
    Inherits design tokens from css/index.css
 ================================================================ */
@@ -70,8 +70,8 @@
   background:
     radial-gradient(ellipse 70% 80% at 0% 55%,  rgba(30,56,104,0.60) 0%, transparent 65%),
     radial-gradient(ellipse 50% 55% at 100% 15%, rgba(0,97,158,0.25) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 35% at 60% 95%,  rgba(197,171,98,0.08) 0%, transparent 70%),
-    linear-gradient(150deg, rgba(7,14,31,0.95) 0%, rgba(18,33,71,0.80) 45%, rgba(28,50,100,0.60) 100%);
+    radial-gradient(ellipse 40% 35% at 60% 95%,  rgba(199,154,62,0.08) 0%, transparent 70%),
+    linear-gradient(150deg, rgba(7,14,31,0.95) 0%, rgba(20,41,77,0.80) 45%, rgba(28,50,100,0.60) 100%);
 }
 
 /* ── Patrón de grilla decorativo (original — z-index:2) */
@@ -172,8 +172,8 @@
 
 .contact-pill:hover {
   color: var(--color-white);
-  background: rgba(197,171,98,0.18);
-  border-color: rgba(197,171,98,0.45);
+  background: rgba(199,154,62,0.18);
+  border-color: rgba(199,154,62,0.45);
   transform: translateY(-2px);
 }
 
@@ -216,7 +216,7 @@
   border: 1px solid var(--color-border);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 2px 16px rgba(18,33,71,0.07);
+  box-shadow: 0 2px 16px rgba(20,41,77,0.07);
 }
 
 .cinfo-card::before {
@@ -263,12 +263,12 @@
   align-items: flex-start;
   gap: 16px;
   padding: 16px 28px;
-  border-bottom: 1px solid rgba(18,33,71,0.06);
+  border-bottom: 1px solid rgba(20,41,77,0.06);
   transition: background var(--transition-fast);
 }
 
 .cinfo-item:last-child { border-bottom: none; }
-.cinfo-item:hover { background: rgba(197,171,98,0.04); }
+.cinfo-item:hover { background: rgba(199,154,62,0.04); }
 
 .cinfo-item__icon {
   display: flex;
@@ -277,8 +277,8 @@
   width: 42px;
   height: 42px;
   min-width: 42px;
-  background: linear-gradient(135deg, rgba(18,33,71,0.05), rgba(197,171,98,0.07));
-  border: 1px solid rgba(197,171,98,0.22);
+  background: linear-gradient(135deg, rgba(20,41,77,0.05), rgba(199,154,62,0.07));
+  border: 1px solid rgba(199,154,62,0.22);
   border-radius: 10px;
   color: var(--color-gold-dark);
   font-size: 1.15rem;
@@ -327,7 +327,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 18px 28px;
-  background: rgba(18,33,71,0.025);
+  background: rgba(20,41,77,0.025);
   border-top: 1px solid var(--color-border);
 }
 
@@ -376,7 +376,7 @@
   border: 1px solid var(--color-border);
   border-radius: 20px;
   padding: 24px;
-  box-shadow: 0 2px 16px rgba(18,33,71,0.07);
+  box-shadow: 0 2px 16px rgba(20,41,77,0.07);
 }
 
 .cinfo-quicklinks__title {
@@ -419,10 +419,10 @@
 }
 
 .cinfo-ql-btn:hover {
-  background: rgba(18,33,71,0.04);
-  border-color: rgba(18,33,71,0.16);
+  background: rgba(20,41,77,0.04);
+  border-color: rgba(20,41,77,0.16);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(18,33,71,0.08);
+  box-shadow: 0 4px 12px rgba(20,41,77,0.08);
 }
 
 .cinfo-ql-btn i {
@@ -453,7 +453,7 @@
   border: 1px solid var(--color-border);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(18,33,71,0.09);
+  box-shadow: 0 4px 24px rgba(20,41,77,0.09);
 }
 
 .cform-card::before {
@@ -612,8 +612,8 @@
    7. SMS CONSENT CHECKBOX
 ================================================================ */
 .cform__consent {
-  background: rgba(18,33,71,0.025);
-  border: 1px solid rgba(18,33,71,0.09);
+  background: rgba(20,41,77,0.025);
+  border: 1px solid rgba(20,41,77,0.09);
   border-radius: 14px;
   padding: 18px 20px;
 }
@@ -802,7 +802,7 @@
 .ctrust-item:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(197,171,98,0.35);
+  border-color: rgba(199,154,62,0.35);
 }
 
 .ctrust-item__icon {
@@ -810,8 +810,8 @@
   align-items: center;
   justify-content: center;
   width: 64px; height: 64px;
-  background: linear-gradient(135deg, rgba(18,33,71,0.05), rgba(197,171,98,0.06));
-  border: 1px solid rgba(197,171,98,0.20);
+  background: linear-gradient(135deg, rgba(20,41,77,0.05), rgba(199,154,62,0.06));
+  border: 1px solid rgba(199,154,62,0.20);
   border-radius: 16px;
   color: var(--color-gold-dark);
   font-size: 1.75rem;
@@ -879,7 +879,7 @@
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--color-white);
-  background: rgba(18,33,71,0.88);
+  background: rgba(20,41,77,0.88);
   padding: 5px 10px;
   border-radius: 8px;
   opacity: 0;

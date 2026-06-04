@@ -1,6 +1,6 @@
 /**
  * ================================================================
- * VENTUS INSURANCE AGENCY — Blog Page JavaScript
+ * NOVU INSURANCE AGENCY — Blog Page JavaScript
  * File: js/blog.js
  * Version: 2.0 — Bug fixes applied
  *

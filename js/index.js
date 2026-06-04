@@ -1,6 +1,6 @@
 /**
  * ================================================================
- * VENTUS INSURANCE AGENCY — Main JavaScript
+ * NOVU INSURANCE AGENCY — Main JavaScript
  * File: js/index.js
  * Version: 3.2 — Testimonials infinite carousel added
  * ================================================================

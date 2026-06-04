@@ -1,5 +1,5 @@
 /* ================================================================
-   VENTUS INSURANCE AGENCY — Privacy Policy Stylesheet-
+   NOVU INSURANCE AGENCY — Privacy Policy Stylesheet-
    File: css/privacy.css -
    Requires: css/index.css (design tokens + base styles)
 ================================================================ */
@@ -20,7 +20,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(197,171,98,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(199,154,62,0.10) 0%, transparent 70%),
     radial-gradient(ellipse 40% 60% at 10% 80%, rgba(30,56,104,0.60) 0%, transparent 60%);
   pointer-events: none;
 }
@@ -82,8 +82,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(197,171,98,0.15);
-  border: 1px solid rgba(197,171,98,0.35);
+  background: rgba(199,154,62,0.15);
+  border: 1px solid rgba(199,154,62,0.35);
   border-radius: 50%;
   margin-bottom: 0.5rem;
 }
@@ -230,14 +230,14 @@
 
 .toc-link:hover {
   color: var(--color-navy-darkest);
-  background: rgba(18,33,71,0.04);
+  background: rgba(20,41,77,0.04);
   border-color: var(--color-gold);
   padding-left: 1.75rem;
 }
 
 .toc-link.is-active {
   color: var(--color-navy-darkest);
-  background: rgba(197,171,98,0.08);
+  background: rgba(199,154,62,0.08);
   border-color: var(--color-gold);
   font-weight: var(--fw-bold);
 }
@@ -266,7 +266,7 @@
 
 .toc-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(197,171,98,0.45);
+  box-shadow: 0 12px 28px rgba(199,154,62,0.45);
 }
 
 .toc-cta i { font-size: var(--fs-md); }
@@ -294,7 +294,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(18,33,71,0.07), rgba(59,82,131,0.05));
+  background: linear-gradient(135deg, rgba(20,41,77,0.07), rgba(59,82,131,0.05));
   border-radius: var(--radius-lg);
   color: var(--color-navy-dark);
   font-size: 1.5rem;
@@ -337,7 +337,7 @@
   gap: 1rem;
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--color-border);
-  background: linear-gradient(135deg, rgba(18,33,71,0.02) 0%, rgba(197,171,98,0.03) 100%);
+  background: linear-gradient(135deg, rgba(20,41,77,0.02) 0%, rgba(199,154,62,0.03) 100%);
   position: relative;
 }
 
@@ -346,7 +346,7 @@
   font-size: 0.65rem;
   font-weight: var(--fw-black);
   letter-spacing: 0.1em;
-  color: rgba(197,171,98,0.6);
+  color: rgba(199,154,62,0.6);
   line-height: 1;
   position: absolute;
   top: 1rem;
@@ -499,13 +499,13 @@
 }
 
 .policy-highlight--gold {
-  background: linear-gradient(135deg, rgba(197,171,98,0.10), rgba(165,133,51,0.06));
-  border: 1px solid rgba(197,171,98,0.35);
+  background: linear-gradient(135deg, rgba(199,154,62,0.10), rgba(168,128,31,0.06));
+  border: 1px solid rgba(199,154,62,0.35);
 }
 
 .policy-highlight--navy {
-  background: linear-gradient(135deg, rgba(18,33,71,0.06), rgba(59,82,131,0.04));
-  border: 1px solid rgba(18,33,71,0.15);
+  background: linear-gradient(135deg, rgba(20,41,77,0.06), rgba(59,82,131,0.04));
+  border: 1px solid rgba(20,41,77,0.15);
 }
 
 .policy-highlight i {
@@ -579,9 +579,9 @@
   font-family: 'Courier New', monospace;
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
-  background: rgba(197,171,98,0.15);
+  background: rgba(199,154,62,0.15);
   color: var(--color-gold-dark);
-  border: 1px solid rgba(197,171,98,0.35);
+  border: 1px solid rgba(199,154,62,0.35);
   padding: 1px 7px;
   border-radius: 4px;
   letter-spacing: 0.05em;

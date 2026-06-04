@@ -1,6 +1,6 @@
 /**
  * ================================================================
- * VENTUS INSURANCE AGENCY — About Us JavaScript
+ * NOVU INSURANCE AGENCY — About Us JavaScript
  * File: js/about.js
  * Version: 3.0 — Bug fixes applied
  *

@@ -1,6 +1,6 @@
 /**
  * ================================================================
- * VENTUS INSURANCE AGENCY — Services Page JavaScript
+ * NOVU INSURANCE AGENCY — Services Page JavaScript
  * File: js/services.js
  * Version: 3.0 — Carrusel de testimonials agregado
  *

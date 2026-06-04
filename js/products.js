@@ -1,6 +1,6 @@
 /**
  * ================================================================
- * VENTUS INSURANCE AGENCY — Products Page JavaScript
+ * NOVU INSURANCE AGENCY — Products Page JavaScript
  * File: js/products.js
  * Version: 2.0 — Bug fixes applied
  *

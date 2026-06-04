@@ -1,5 +1,5 @@
 /**
- * VENTUS INSURANCE AGENCY — Privacy Page JavaScript
+ * NOVU INSURANCE AGENCY — Privacy Page JavaScript
  * File: js/privacy.js
  * Handles: Table of contents active highlighting + smooth scroll
  */

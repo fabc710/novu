@@ -1,5 +1,5 @@
 /* ================================================================
-   VENTUS INSURANCE AGENCY — About Us Stylesheet
+   NOVU INSURANCE AGENCY — About Us Stylesheet
    File: css/about.css
    Version: 2.1 — Hero 3-stat fix, marquee single-row, responsive polish
    Description: Styles exclusive to about.html
@@ -30,7 +30,7 @@
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  background-color: #0d1830; /* fallback while image loads */
+  background-color: #0C1A33; /* fallback while image loads */
 }
 
 /* ── Background image + overlay container ── */
@@ -89,7 +89,7 @@
 
 .page-hero__shape--2 {
   width: 280px; height: 280px;
-  background: rgba(197, 171, 98, 0.06);
+  background: rgba(199,154,62, 0.06);
   bottom: -100px; right: 20%;
   animation: morphShape 16s ease-in-out infinite alternate-reverse;
 }
@@ -315,7 +315,7 @@
   bottom: var(--space-4);
   left: var(--space-4);
   background: var(--gradient-navy);
-  border: 2px solid rgba(197, 171, 98, 0.40);
+  border: 2px solid rgba(199,154,62, 0.40);
   border-radius: var(--radius-xl);
   padding: var(--space-4) var(--space-6);
   display: flex;
@@ -389,8 +389,8 @@
   justify-content: center;
   width: 48px; height: 48px;
   min-width: 48px;
-  background: linear-gradient(135deg, rgba(18, 33, 71, 0.07), rgba(197, 171, 98, 0.08));
-  border: 1px solid rgba(197, 171, 98, 0.25);
+  background: linear-gradient(135deg, rgba(20,41,77, 0.07), rgba(199,154,62, 0.08));
+  border: 1px solid rgba(199,154,62, 0.25);
   border-radius: var(--radius-lg);
   color: var(--color-gold-dark);
   font-size: var(--fs-xl);
@@ -446,7 +446,7 @@
   position: absolute;
   bottom: 0; right: 0;
   width: 100px; height: 100px;
-  background: radial-gradient(circle at 100% 100%, rgba(197, 171, 98, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle at 100% 100%, rgba(199,154,62, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -458,13 +458,13 @@
   box-shadow: var(--shadow-lg);
 }
 
-.mvv-card--featured::after          { background: radial-gradient(circle at 100% 100%, rgba(197, 171, 98, 0.12) 0%, transparent 70%); }
+.mvv-card--featured::after          { background: radial-gradient(circle at 100% 100%, rgba(199,154,62, 0.12) 0%, transparent 70%); }
 .mvv-card--featured .mvv-card__label { color: rgba(255, 255, 255, 0.55); }
 .mvv-card--featured .mvv-card__title { color: var(--color-white); }
 .mvv-card--featured .mvv-card__desc  { color: rgba(255, 255, 255, 0.72); }
 .mvv-card--featured .mvv-card__icon-wrap {
-  background: rgba(197, 171, 98, 0.18);
-  border-color: rgba(197, 171, 98, 0.35);
+  background: rgba(199,154,62, 0.18);
+  border-color: rgba(199,154,62, 0.35);
   color: var(--color-gold-light);
 }
 
@@ -473,8 +473,8 @@
   align-items: center;
   justify-content: center;
   width: 64px; height: 64px;
-  background: linear-gradient(135deg, rgba(18, 33, 71, 0.08), rgba(197, 171, 98, 0.07));
-  border: 1px solid rgba(197, 171, 98, 0.25);
+  background: linear-gradient(135deg, rgba(20,41,77, 0.08), rgba(199,154,62, 0.07));
+  border: 1px solid rgba(199,154,62, 0.25);
   border-radius: var(--radius-xl);
   color: var(--color-gold-dark);
   font-size: 1.75rem;
@@ -557,7 +557,7 @@
   top: var(--space-3);
   bottom: var(--space-3);
   width: 2px;
-  background: linear-gradient(to bottom, var(--color-gold) 0%, var(--color-navy-mid) 60%, rgba(197, 171, 98, 0.3) 100%);
+  background: linear-gradient(to bottom, var(--color-gold) 0%, var(--color-navy-mid) 60%, rgba(199,154,62, 0.3) 100%);
   border-radius: var(--radius-full);
 }
 
@@ -605,7 +605,7 @@
 .timeline__item:hover .timeline__dot {
   background: var(--color-gold);
   border-color: var(--color-gold);
-  box-shadow: 0 0 0 4px rgba(197, 171, 98, 0.20);
+  box-shadow: 0 0 0 4px rgba(199,154,62, 0.20);
 }
 
 .timeline__dot--current {
@@ -613,7 +613,7 @@
   border-color: var(--color-gold-dark);
   width: 18px; height: 18px;
   right: calc(-1 * var(--space-10) - 8px);
-  box-shadow: 0 0 0 4px rgba(197, 171, 98, 0.25), 0 0 0 8px rgba(197, 171, 98, 0.10);
+  box-shadow: 0 0 0 4px rgba(199,154,62, 0.25), 0 0 0 8px rgba(199,154,62, 0.10);
 }
 
 .timeline__item--current .timeline__year { color: var(--color-gold-dark); font-size: var(--fs-base); }
@@ -641,12 +641,12 @@
 .timeline__item:hover .timeline__content {
   transform: translateX(4px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(197, 171, 98, 0.35);
+  border-color: rgba(199,154,62, 0.35);
 }
 
 .timeline__item--current .timeline__content {
   border-color: var(--color-gold);
-  background: linear-gradient(160deg, #fff 0%, rgba(197, 171, 98, 0.04) 100%);
+  background: linear-gradient(160deg, #fff 0%, rgba(199,154,62, 0.04) 100%);
 }
 
 .timeline__event-title { font-size: var(--fs-md); font-weight: var(--fw-bold); color: var(--color-navy-darkest); margin-bottom: var(--space-3); }
@@ -696,7 +696,7 @@
 .team-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(18, 33, 71, 0.85) 0%, rgba(18, 33, 71, 0.40) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(20,41,77, 0.85) 0%, rgba(20,41,77, 0.40) 50%, transparent 100%);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -853,7 +853,7 @@
 
 .carrier__logo-item:hover {
   box-shadow: var(--shadow-md);
-  border-color: rgba(197, 171, 98, 0.40);
+  border-color: rgba(199,154,62, 0.40);
 }
 
 .carrier__logo-item img {
@@ -896,7 +896,7 @@
 .trust-badge:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(197, 171, 98, 0.40);
+  border-color: rgba(199,154,62, 0.40);
 }
 
 .trust-badge__icon {
@@ -904,7 +904,7 @@
   align-items: center;
   justify-content: center;
   width: 44px; height: 44px;
-  background: linear-gradient(135deg, rgba(18, 33, 71, 0.07), rgba(197, 171, 98, 0.07));
+  background: linear-gradient(135deg, rgba(20,41,77, 0.07), rgba(199,154,62, 0.07));
   border-radius: var(--radius-md);
   color: var(--color-gold-dark);
   font-size: var(--fs-xl);

@@ -1,6 +1,6 @@
 /**
  * ================================================================
- * VENTUS INSURANCE AGENCY — Contact Page JavaScript
+ * NOVU INSURANCE AGENCY — Contact Page JavaScript
  * File: js/contact.js
  * Version: 2.0 — Bug fixes applied
  *

@@ -1,6 +1,6 @@
 /**
  * ================================================================
- * VENTUS INSURANCE AGENCY — Blog Post JavaScript
+ * NOVU INSURANCE AGENCY — Blog Post JavaScript
  * File: js/blog-post.js
  *
  * TABLE OF CONTENTS
@@ -259,3 +259,4 @@ function initShareLinks() {
     twBtn.setAttribute('href', base + url);
   }
 }
+
